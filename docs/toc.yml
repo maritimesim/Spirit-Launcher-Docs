@@ -1,4 +1,4 @@
 - name: User manual
-  href: user_manual/user-manual.md
+  href: index.md
 - name: Release Notes
   href: release_notes/release-notes.md
