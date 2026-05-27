@@ -10,15 +10,28 @@
         ]
       }
     ],
+    "resource": [
+      {
+        "files": [
+          "KM_Wordmark_Stacked_Anchor_RGB.png",
+          "KM_Wordmark_Stacked_Negative_RGB.png"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
     "output": "_site",
     "template": [
       "default",
-      "modern"
+      "modern",
+      "templates/spiritlauncher"
     ],
     "globalMetadata": {
-      "_appTitle": "SpiritLauncher Docs",
-      "_appName": "SpiritLauncher",
-      "_appFooter": "SpiritLauncher documentation",
+      "_appTitle": "Spirit Launcher Docs",
+      "_appName": "Spirit Launcher",
+      "_appLogoPath": "KM_Wordmark_Stacked_Anchor_RGB.png",
+      "_appFooter": "Spirit Launcher documentation",
       "_disableContribution": true
     }
   }
