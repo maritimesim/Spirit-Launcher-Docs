@@ -1,0 +1,25 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appTitle": "SpiritLauncher Docs",
+      "_appName": "SpiritLauncher",
+      "_appFooter": "SpiritLauncher documentation",
+      "_disableContribution": true
+    }
+  }
+}
