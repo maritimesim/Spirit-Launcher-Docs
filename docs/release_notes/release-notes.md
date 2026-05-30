@@ -2,16 +2,12 @@
 
 ## 2.1.0
 
-Updated: 2026-05-27
+Updated: 2026-05-30
 
 ### Added
 
-- **DocFX documentation publishing** — Added a dedicated `docs/` site, a combined release-notes page, a GitHub Pages workflow, and an Azure mirror stage that publishes the docs surface to the companion GitHub repository.
-- **In-app documentation links** — The main window now includes a toolbar help button and a **What's new** action in the update banner that open configurable documentation URLs.
-
-### Changed
-
-- **GitVersion no-bump handling** — Commits tagged with `+semver: none` or `+semver: skip` now suppress version increments.
+- **Documentation web page** — Added user documentation and release notes available though github pages. 
+- **In-app documentation links** — The main window now includes a toolbar help button and a **What's new** action in the update banner that open documentation URLs.
 
 ## 2.0.0
 
