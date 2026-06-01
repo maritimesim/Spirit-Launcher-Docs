@@ -2,12 +2,25 @@
 
 ## 2.1.0
 
-Updated: 2026-05-30
+Updated: 2026-06-01
 
 ### Added
 
+- **Manage content files from downloads** — The Download Content dialog now adds **New** and **Edit** actions beside existing Objects, Extensions, and Areas file selections. You can create new user-managed content lists, optionally copy from an existing file, and edit user files directly in Notepad++ or Notepad while shipped default files remain read-only.
+- **Centralized uninstall dialog** — Removed the per-version uninstall action from the home screen and added a top-level **Uninstall** toolbar button that opens a tabbed dialog for batch uninstalling installed versions.
+- **Seaview uninstall support** — The uninstall dialog now includes a **Seaview** tab that finds installed `SeaviewR7` versions from the Windows uninstall registry and queues their silent uninstall commands alongside Spirit uninstall jobs.
+- **Seaview R7 version override tab** — Version Settings now includes a **Seaview R7** tab that shows the default version resolved from `SpiritApplicationVersions.json`, lists installed Seaview R7 versions, and lets you switch the executable override for both x64 and x86 simulator configuration files without opening the raw XML editor.
+- **Tabbed content downloads** — The Download Content dialog now uses separate **Objects**, **Extensions**, and **Areas** tabs with the version selector above the tabs, fixed-size modal layout, and both **Download** and **Download and Close** actions that queue only the active tab.
+- **Area chart type option** — Area downloads now include a **Chart type** choice with **Default**, **Standard**, and **Native**. Standard and Native add the matching `-ct` argument to the kc area download command.
+- **Installer tabs for Seaview and prerequisites** — The main install dialog now includes separate tabs for **Spirit**, **Seaview R7**, and **K-Sim Prerequisites**. Seaview downloads now run silently with no installer UI, prerequisites downloads start the downloaded executable with `/z /v /noreboot`, and both clean up their temporary download files afterward.
 - **Documentation web page** — Added user documentation and release notes available though github pages. 
 - **In-app documentation links** — The main window now includes a toolbar help button and a **What's new** action in the update banner that open documentation URLs.
+- **Seaview R7 object download queue entries** — Object downloads can now queue Seaview R7 model downloads as separate entries, including an option to download only Seaview R7 models for the selected product codes. Seaview R7 model downloads now target `ContentServer\models`, and Spirit Launcher creates that folder automatically when setting up the content root.
+- **Onboarding and quick-start docs** — Added published DocFX pages for onboarding and quick start, and the onboarding wizard now includes a **Help** button on every step that opens the onboarding guide directly.
+
+### Fixed
+
+- **Streamlined onboarding content migration** — The onboarding flow no longer lets you skip migrating existing system content folders after choosing a content root, and starting the migration now runs immediately without an extra confirmation popup. You must complete the migration step before continuing so symlink setup can succeed.
 
 ## 2.0.0
 

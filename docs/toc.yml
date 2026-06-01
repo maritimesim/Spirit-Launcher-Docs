@@ -1,4 +1,6 @@
-- name: User manual
-  href: index.md
+- name: Quick Start
+  href: quick-start/index.md
+- name: Onboarding
+  href: onboarding/index.md
 - name: Release Notes
   href: release_notes/release-notes.md

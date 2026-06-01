@@ -1,5 +1,5 @@
 ---
-title: SpiritLauncher User Manual
+title: Spirit Launcher Docs
 ---
 
-[!include[SpiritLauncher User Manual](user_manual/user-manual.md)]
+[!include[SpiritLauncher Guick start guide](quick-start/index.md)]

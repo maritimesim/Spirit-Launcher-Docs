@@ -13,8 +13,7 @@
     "resource": [
       {
         "files": [
-          "KM_Wordmark_Stacked_Anchor_RGB.png",
-          "KM_Wordmark_Stacked_Negative_RGB.png"
+          "**/*.{png,jpg,jpeg,gif,svg,webp}"
         ],
         "exclude": [
           "_site/**"

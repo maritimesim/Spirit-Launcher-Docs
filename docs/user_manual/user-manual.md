@@ -27,11 +27,11 @@ You can only move to the next step when the CLI is installed and you are logged 
 
 This step defines the folder Spirit Launcher will use for shared content storage.
 
-1. Click **Browse** and choose the root folder that should hold `Objects`, `Extensions`, and `Areas`.
+1. Click **Browse** and choose the root folder that should hold `Objects`, `Extensions`, `Areas`, and `ContentServer\models`.
 2. Review the path in the text box.
 3. Click **Next**.
 
-Spirit Launcher creates the `Objects`, `Extensions`, and `Areas` subfolders automatically if they do not already exist.
+Spirit Launcher creates the `Objects`, `Extensions`, `Areas`, and `ContentServer\models` folders automatically if they do not already exist.
 
 ### Step 3: System Folder Check
 
@@ -145,15 +145,20 @@ The **Refresh All** button in the top-right corner rebuilds the content view and
 
 ## Download Spirit
 
-Use the **Install** button on the main window to download and install a new Spirit version.
+Use the **Install** button on the main window to open the installer dialog for **Spirit**, **Seaview R7**, or **K-Sim Prerequisites**.
 
 1. Click **Install**.
-2. In the **Install Spirit Version** dialog, enter the **Branch** to install from.
-3. Optionally enter a specific **Version**. Leave it empty, or use `latest`, to install the newest available version from that branch.
-4. Click **Start Install**.
-5. Monitor progress from the queue panel in the main window.
+2. Select the tab for the installer you want to run.
+3. Enter the **Branch** to install from.
+4. Optionally enter a specific **Version**. Leave it empty, or use `latest`, to install the newest available version from that branch.
+5. Click **Install** for the selected tab.
+6. Monitor progress from the queue panel in the main window.
 
-The download dialog is pre-filled from Spirit Launcher settings, so the default branch and version usually already match your normal install flow.
+The installer dialog is pre-filled from Spirit Launcher settings, so the default branch and version usually already match your normal install flow. The branch always maps to `-b`. A specific version adds `-p`, while an empty version or `latest` downloads the newest available package for that branch.
+
+- **Spirit** uses the existing simulator installer flow.
+- **Seaview R7** downloads the Seaview installer package, runs it silently with no UI shown to the user, and removes the temporary files.
+- **K-Sim Prerequisites** downloads the prerequisites installer executable, starts it with `/z /v /noreboot`, and removes the temporary files.
 
 ## Download Content
 
