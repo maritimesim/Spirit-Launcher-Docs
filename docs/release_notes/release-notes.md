@@ -1,5 +1,43 @@
 # Release Notes
 
+## 2.2.0
+
+Updated: 2026-06-07
+
+### Added
+
+- **Parallel content downloads** — Settings now includes an option to keep the queue fully serial or allow parallel content downloads with a user-defined download limit. Default enabled with 3 content downloads and 1 install or uninstall in parallel. 
+
+![parallel downlaods](images/parallel-download.png)
+
+- **Download source from existing folder** — The Download of areas and objects can download lists directly from the immediate subfolder names in another selected folder.
+
+![download-source-folder](images/download-source-folder.png)
+
+- **Installation profiles for one Spirit install** — The main version list can now show multiple installation profiles for the same installed Spirit version, so you can duplicate a profile for different customers or setups, rename profiles, and keep separate content selections per profile.
+
+![Multiple profiles](images/multiple-profiles.png)
+
+- **Pinned installation profiles** — Installation profiles now support pinning from the three-dots menu. Pinned profiles show a pin badge on the card and stay at the top of the profile list for that Spirit install while keeping the existing sort order inside pinned and unpinned groups.
+
+![Multiple profiles](images/pinned-profiles.png)
+
+- **Profile-specific configuration launch files** — Version Settings now includes a **Configuration** tab where each installation profile can choose its own configuration file. Spirit Launcher now finds configuration XML files recursively under the shared `Configuration` folder, starts Resource Manager with the selected file path directly, and lets you save a short description for each configuration.The **Configuration** tab also adds an **Add Configuration** flow that can create a new file from the installed K-Sim template when available or copy from an existing shared or installed `PersistentConfigFile.xml` source.
+
+![configuration selection](images/profile-configuration-settering.png)
+
+- **Custom names for installed versions** — The main version list now lets you click a version label to add or edit a custom name inline. Named versions show the custom name above the original version text, and your custom names are saved between app restarts.
+
+![named versions](images/named-versions.png)
+
+- **Editable content folder name and description** — Profile Settings now lets you rename object, extension, and area folders directly from their tabs and save an optional description. 
+
+![alt text](images/editable-object-name-and-details.png)
+
+### Fixed
+
+- **Profile-scoped running controls** — When one installation profile is running, the launcher now keeps the terminate spinner and active launch controls on that profile only. All other profiles in the launcher have Resource Manager, Instructor, Config Tool, and Close All disabled until the active profile stops running.
+
 ## 2.1.0
 
 Updated: 2026-06-01
