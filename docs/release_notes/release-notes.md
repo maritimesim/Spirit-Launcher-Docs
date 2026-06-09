@@ -1,5 +1,13 @@
 # Release Notes
 
+## 2.3.0
+
+### Added
+
+- **Extension picker for downloads** — The Extensions tab in Download Content now has a searchable extensions picker backed by the kc extension catalog, so you can filter by extension name or product code, select the displayed results in bulk, and see a short summary of the chosen extensions before queuing the download.
+
+![Pick extensions to download](images/pick-extensions-to-download.png)
+
 ## 2.2.0
 
 Updated: 2026-06-07
