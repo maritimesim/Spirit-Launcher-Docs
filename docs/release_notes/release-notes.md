@@ -1,5 +1,18 @@
 # Release Notes
 
+## 2.4.0
+
+### Added
+
+- **Option to download objects by version instead of MIV** — Download Content's Objects tab now has a "Use version (-v) instead of MIV" checkbox (off by default) that switches the object download command to use the Spirit version (e.g. `-v 3.11.210` or `-v 3.11.210-testing.1`) instead of `--miv`. Settings has a matching "Use version instead of MIV by default" option to change the default for new downloads.
+
+### Fixed
+
+- **Pasted branch/version whitespace no longer breaks installs** — Pasting a branch or version value with leading/trailing spaces into the Install dialog or Download Content's custom branch fields is now automatically trimmed, and the value is trimmed again before the install/download command runs.
+- **Configuration file list validated by content, not just name** — The Configuration tab's list of available configuration files now opens each XML file and confirms it has a `ConfigDataSet` root element in the Spirit config namespace, instead of only filtering by file name and folder.
+- **Download Content destination folder now reflects profile changes without restarting** — Changing a profile's Object/Extensions/Areas folder mapping in Content Management and then opening Download Content for that profile now shows the updated destination immediately, instead of the old value until the app was restarted.
+- **Generated Objects/Extensions destination names include version info again** — When a profile has no folder mapped ("None"), the auto-generated destination folder name is now `Objects_<MIV>` for objects and `Extensions_<hash>` for extensions, matching the version/extension-set actually being downloaded, instead of the plain `Objects`/`Extensions` name.
+
 ## 2.3.0
 
 ### Added
