@@ -1,5 +1,25 @@
 # Release Notes
 
+## 2.5.0
+
+### Added
+
+- **Copy to clipboard buttons for versions and folder paths.** A small copy icon now sits next to values for quick copy and paste in case more details are needed to debug, like the version number on the main page, the MIV and root folder paths in the Objects and Extensions tabs, the folder path and extension name in the Extension Versions dialog, and the version and executable path in the Seaview R7 tab.
+
+### Fixed
+- **Pin the rabbit mq.** Use Rabbit MQ image version that works with all spirit version. 
+
+## 2.4.1
+
+### Added
+
+- **Warning before reinstalling an already downloaded version.** Starting a Spirit or Seaview R7 download now checks if that exact version is already installed. If it is, you get asked to confirm before it queues the reinstall, instead of just downloading it again without asking.
+
+### Fixed
+
+- **Version lists now sort newest first everywhere.** The Uninstall dialog's Spirit and Seaview tabs, the Seaview R7 version override tab, and the Download Content version picker all sort versions newest first now, and they do it the same way. Versions with a custom suffix, like `2.2.2-testing`, are grouped and ordered correctly under their base version instead of sometimes ending up out of order.
+- **Custom named Seaview R7 versions no longer disappear from the override tab.** Installed Seaview R7 versions with a version string that is not in the standard format are now shown in the Seaview R7 version override tab instead of being quietly left out, and picking a default version for them no longer risks an error.
+
 ## 2.4.0
 
 ### Added
