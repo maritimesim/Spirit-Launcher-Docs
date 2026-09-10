@@ -1,5 +1,11 @@
 # Release Notes
 
+## 2.5.1
+
+### Fixed
+
+- **Rancher Desktop installation works with the renamed K-Sim container runtime package.** Spirit Launcher now downloads `KSIM_CONTAINERRUNTIME` through kc instead of the retired Ocean prerequisites package.
+
 ## 2.5.0
 
 ### Added
