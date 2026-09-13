@@ -1,9 +1,27 @@
 # Release Notes
 
+## 2.6.0
+
+### Added
+
+- **Settings are easier to navigate.** The Settings dialog now groups related options into General, Runtime, Downloads, and Content tabs with a wider card-based layout and fixed Save and Cancel actions, reducing scrolling and making each category easier to scan.
+- **Optional installed-version check before downloads.** Spirit Launcher now uses the selected branch and version in a kc what-if check before downloading Spirit, Seaview R7, or K-Sim Prerequisites. When the pipeline version is already installed, you can skip it or install anyway; the check is enabled by default and can be disabled in Settings.
+- **Clear logs from the log viewer.** The Application Logs window now has a Clear Logs button that removes all current log entries.
+- **Release channels for every download.** Spirit, prerequisites, Seaview R7, objects, extensions, areas, and content repairs can now target Release, Pre-release, or All. Settings can choose a fixed default or remember the most recently used channel.
+- **Startup update notifications for the kc CLI.** Spirit Launcher now compares the installed kc file version with the latest `KSIM-CLI` pipeline and offers **Update now** or **Update on close** alongside any available Spirit Launcher update.
+
+### Fixed
+
+- **Missing content folders can now be removed cleanly from Version Settings.** Deleting an object, extension, or area entry whose folder was already deleted outside Spirit Launcher removes the entry without showing a Folder Not Found error.
+- **Onboarding now detects a newly installed kc CLI when you select Re-check.** Spirit Launcher reloads the current machine and user `PATH` values so you no longer need to restart it after installing the CLI.
+- **Configuration names now accept periods and other valid Windows filename characters.** The Add and Rename dialogs show invalid-character errors immediately and disable saving until the name is valid.
+- **kc CLI updates now run and wait for setup correctly.** Spirit Launcher no longer redirects the command output, which previously caused `kc update` to reject the update attempt, and now tracks the spawned K-Sim Connect CLI setup process until installation finishes.
+
 ## 2.5.1
 
 ### Fixed
 
+- **Downloading a specific version no longer reports it as already installed based on the branch's latest.** The already-installed check now compares against the version you actually picked instead of always looking up the latest version on the branch.
 - **Rancher Desktop installation works with the renamed K-Sim container runtime package.** Spirit Launcher now downloads `KSIM_CONTAINERRUNTIME` through kc instead of the retired Ocean prerequisites package.
 
 ## 2.5.0
