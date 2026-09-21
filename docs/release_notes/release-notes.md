@@ -1,5 +1,13 @@
 # Release Notes
 
+## 2.8.0
+
+### Added
+
+- **Install and uninstall Content Server** The Download dialog now has a Content Server tab. Same for The Uninstall dialog.
+- **Container environment check before Content Server install or uninstall.** Spirit Launcher now confirms the container runtime is running before queuing a Content Server install or uninstall.
+- CS can be easly removed in the future when it gets merged with Nemo installer.
+
 ## 2.6.0
 
 ### Added
