@@ -1,5 +1,18 @@
 # Release Notes
 
+## 2.9.0
+
+### Added
+
+- **KC authentication banner.** The main window now offers Login and Verify login actions when KC authentication is required. Successful login automatically resumes waiting KC operations; Verify login remains available for signing in outside Spirit Launcher.
+- **Running simulators are detected automatically.** Spirit Launcher now detects Resource Managers started outside the app, including after restarting the launcher, and keeps checking while open. The running profile is matched by installation and mapped object, area, and extension folders; ties use the first best match. Launches from Spirit Launcher keep the selected profile marked as running.
+
+### Fixed
+
+- **Content Download buttons enable after profile selection.** Both Download actions now refresh when an installation profile is selected or cleared. Incomplete input is reported when starting a download.
+- **Queue feedback appears immediately.** Installations, uninstalls, content downloads, repairs, and retries now show queued work before preparation or container checks begin. Content preparation stays visible, and repeated Download clicks are blocked while a request is being prepared.
+- **Version loading stays visible with long lists.** The loading indicator now stays centered in the available window area as the window is resized. The version list and its scrollbar appear only after loading finishes.
+
 ## 2.8.0
 
 ### Added
