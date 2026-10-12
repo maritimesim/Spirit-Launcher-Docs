@@ -1,5 +1,12 @@
 # Release Notes
 
+## 2.10.0
+
+### Added
+
+- **Import configuration files in Version Settings.** Add Configuration now has a large dashed drop area with a centered upload icon: click anywhere in the field to select an XML file, or drop a file into the dialog, including from Explorer while Spirit Launcher runs as administrator. The imported copy is saved under `Configuration/<name>/<name>.xml` in the content root, with its description retained.
+- **Open configuration folders.** Every configuration now has an Open folder button, including Default. For K-Sim, Default opens the version-specific Config folder when it contains `PersistentConfigFile.xml`, otherwise the shared Config folder.
+
 ## 2.9.0
 
 ### Added
