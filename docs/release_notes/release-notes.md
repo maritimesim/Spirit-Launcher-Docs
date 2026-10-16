@@ -1,5 +1,18 @@
 # Release Notes
 
+## 2.12.0
+
+### Changed
+
+- The log viewer handles large logs better and updates automatically. Refresh and Auto-Refresh are no longer needed.
+- Scroll up to read older logs without being pulled back down. Click Follow Latest to return to new entries.
+- Drag to select text within a log entry, or use Shift/Ctrl+click to select several entries. Copy Selected and Copy All are also available.
+
+### Fixed
+
+- Clicking another Resource Manager launch button now shows the “already running” warning instead of being disabled.
+- Error popups now open over the launcher, even after moving it to another screen.
+
 ## 2.11.0
 
 ### Added
