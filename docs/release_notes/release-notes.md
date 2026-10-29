@@ -1,5 +1,29 @@
 # Release Notes
 
+## 2.13.0
+
+### Added
+
+- **Reuse recent installer choices.** Each Install Spirit and Tools tab remembers five recent branch, version, and release-channel combinations. Select one to fill the fields, then choose when to download or install.
+- **Check the latest build before downloading.** Use Check latest in any installer tab to see the newest available version for the selected branch and release channel, without changing your entered version or downloading an installer. If no build matches, the message highlights the branch and channel and suggests what to try next, separately from connection errors.
+- **See who uses shared content.** Objects, Extensions, and Persistent Configuration show which profiles use each folder or file. The list updates when you change your selection.
+- **Configuration timestamps.** Persistent Configuration shows when each shared file was last modified. Refresh the list to pick up external edits.
+- **Download Spirit while Resource Manager is running.** Download now and choose when to install from a main-window notice. Downloaded installers are remembered after restarting the launcher, do not block other downloads, and are kept if installation fails. Review them to install, open the download folder, or remove a download. Installing while Resource Manager is running asks you to choose **Keep for later** or **Install anyway**; closing Resource Manager does not automatically start a deferred installation.
+
+### Changed
+
+- **Less waiting at startup.** Installed versions appear while content checks run in the background. Launching Resource Manager waits for those checks to finish.
+- **Fewer repeated content scans.** Unchanged content checks are reused between launches, and opening Version Settings reuses the startup scan. Refresh All still runs a fresh scan.
+- **Clearer configuration creation.** Choose a template, copy an existing configuration, or import a file, with explanations when a source is unavailable. The dialog also fits smaller screens better.
+
+### Fixed
+
+- **Uninstall lists no longer show hidden installer components.** Spirit, Seaview, and Content Server omit internal packages managed by a parent installer, preventing extra entries such as Seaview's bundled MSI.
+- **Seaview R7 EXE installers work too.** Downloads packaged as a WiX EXE now install instead of failing with “No MSI installer found.” Older MSI packages still work.
+- **Missing configurations no longer silently switch to Default.** Affected profiles show a small amber warning button beside the version. Click it to open Persistent Configuration. Resource Manager won't launch until you restore the file, choose a replacement, or select Default.
+- **Installer errors are easier to troubleshoot.** Failed MSI installs show the Windows error description and the path to a detailed log, kept even after installer cleanup.
+- **Downloaded-installer dialog polish.** The Close button label is centered, and pending-install queue messages use normal hyphens.
+
 ## 2.12.0
 
 ### Changed
