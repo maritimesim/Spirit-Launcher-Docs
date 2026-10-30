@@ -1,5 +1,11 @@
 # Release Notes
 
+## Unreleased
+
+### Added
+
+- **Launch multiple Custom Builds.** Add exact executable folders (for example, `D:\dev\NemoDory\bin\x64d`) under Settings > Custom Builds to use builds from different branches alongside installed versions, with separate profiles and the same content checks and launch controls. Builds display their version like installed versions, without an automatic path label. An existing development build setting is carried over automatically. Removing an entry removes its launcher profiles, not its files; custom builds cannot be uninstalled by the launcher.
+
 ## 2.13.0
 
 ### Added
