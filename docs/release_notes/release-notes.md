@@ -1,6 +1,19 @@
 # Release Notes
 
-## Unreleased
+## 2.14.0
+
+### Added
+
+- **Seamless Sailing tab in Version Settings.** Choose a tileset, AtoN source, model collection, and Content Server for each profile, with a preview of the content path used at the next launch.
+- **Organize R7 models into collections.** Download into an existing collection or create one named after your source file, folder, or exercise. Choose which model collection each profile uses in Seamless Sailing, with a model-folder count and warnings for missing or empty content. See the tileset's current model and AtoN sources separately from your profile's saved choices.
+- **Apply Seamless Sailing choices at launch.** Resource Manager links your chosen model and AtoN collections into the tileset and updates the chosen Content Server's content path. Leave unchanged preserves the existing setup. Configuration changes keep a backup; existing real content folders are never replaced.
+
+### Fixed
+
+- **Clearer Content Server settings.** See the current content path and the path planned for the next launch. Server selection stays stable, and configurations without a Content Server no longer leave a large empty gap.
+- General fixes and improvements, including clearer download outcomes, compact status messages, and a brief dismissible confirmation showing how many operations completed successfully.
+
+## 2.13.2
 
 ### Added
 
