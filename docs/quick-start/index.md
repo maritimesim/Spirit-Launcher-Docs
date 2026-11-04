@@ -26,7 +26,7 @@ The queue shows progress, and downloaded content is placed under your configured
 
 ## 3. Manage Content For a Version
 
-Click the gear button on a Spirit version to open content management.
+Click the gear button on a profile to open its profile settings.
 Select the object, extension, and area folders you want that version to use.
 Re-validate or fix incompatible folders when needed, then close the window to keep working with that version.
 

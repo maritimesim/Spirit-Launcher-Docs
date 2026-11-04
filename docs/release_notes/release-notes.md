@@ -1,5 +1,17 @@
 # Release Notes
 
+## 2.15.0
+
+### Added
+
+- **Live logs for each profile.** The new Logs button on every profile opens a separate window that stays open while you work. Follow the Content Server, instructor (3DView), and Seaview R7 student station logs live (tabs are marked R7), with a filter, copy, and clear status for missing, replaced, or previous-run files and the file's last modified time. Scrolling up or selecting lines pauses the view so it stays still while the application keeps writing; Follow Latest catches up. Show in Explorer opens the log location with the file selected. Open log file... adds any log, such as an older version's VisualApp.log, as a new tab. Extra log files can also be added in settings.json.
+
+### Changed
+
+- **Downloads no longer wait for installs.** Installer downloads now run while another install or uninstall is in progress. Finished downloads wait in the queue and install in order.
+- **Slightly smaller action icons on profile cards.** The action buttons are more compact, with Resource Manager kept slightly larger.
+- **Simpler Seamless Sailing settings.** Profile settings now offer only tileset, AtoN, and model selections. Resource Manager launch applies the selected AtoN and model symlinks without inspecting Content Server settings or changing its content path. The Content Server picker, configuration summary, and missing-server launch prompts have been removed.
+
 ## 2.14.0
 
 ### Added

@@ -81,15 +81,39 @@ Each installed Spirit version is shown as a card with actions on the right side.
 - The Config Tool button opens **Config Tool**.
 - Right-clicking the Config Tool button exposes **Open** and **Open and Connect**.
 - The folder button opens a menu for **Bin x64**, **Bin x86**, **Config**, **System**, and **User** folders when they exist.
-- The gear button opens version-specific settings and content management.
+- The gear button opens **Profile settings** for that profile.
+- The document button opens **Logs** for that profile in a separate window that stays open while you keep working. It shows the R7 Content Server log, the R7 instructor (3DView) log, and one log per Seaview R7 student station computer from the profile's Persistent Configuration, and follows them live. See [Profile logs](#profile-logs).
 - **Close all** shuts down applications related to that version.
 - **Uninstall** removes the version. This action is disabled while the version is running.
 
 The lower queue panel shows the current operation, queue counts, completion counts, warnings, and failures. The log strip at the bottom shows the latest log message and provides an **Open Logs** button.
 
-## Spirit Version Settings
+### Profile logs
 
-Open version settings by clicking the gear button on a version card. This opens the content management window for that specific Spirit version.
+The **Logs** button on a version card opens one window per profile. Click it again to bring the existing window to the front.
+
+- Each log is a tab. Only the selected tab is read, so large logs cost nothing while you look at another tab. Tabs for logs found automatically are marked **(R7)**.
+- **Open log file...** (top of the window) opens any `.log` or `.txt` file as a new tab, for example `VisualApp.log` of an older version, or a file from a dated `VisualLogs` folder. Opened files are not remembered after the window is closed.
+- Logs follow the end of the file. Scroll up or select lines to pause: the view stops moving while the application keeps writing to the file, and the status shows **Paused**. Click **Follow Latest** to catch up and resume. Scrolling back to the bottom does not resume by itself.
+- **Show in Explorer** opens the log location with the file selected, or its folder when the file does not exist yet.
+- Type in **Filter** to show only lines that contain the text. Use **Copy Selected** or **Copy All** to copy raw lines.
+- Student station logs are named after the computer assigned to the station in the profile's Persistent Configuration (for example `PC1.log`). Stations on the same computer share one log.
+- If a file does not exist yet, the tab shows **Waiting for the log file** and starts reading as soon as the application creates it.
+- Resource Manager starts every application with a fresh log. The tab clears when the file is replaced. **Current run** and **Previous run** show whether the file was written since this profile's Resource Manager started. **Last modified** shows when the file was last written.
+- Very large logs show the last 8 MB, and each tab keeps the latest 50,000 lines.
+
+The files are shared by every profile on the computer, so a log can contain output from a different profile that ran earlier.
+
+To add your own log files, add entries to `AdditionalLogSources` in `settings.json` (next to the launcher). They appear in every profile's log window; environment variables such as `%LOCALAPPDATA%` are expanded:
+
+```json
+"AdditionalLogSources": [
+  { "Name": "My Tool", "Path": "%LOCALAPPDATA%\\MyTool\\logs\\tool.log" }
+]
+```
+## Profile Settings
+
+Open profile settings by clicking the gear button on a profile's card. The window title shows the profile name and Spirit version. Objects, Extensions, Areas, Persistent Configuration, and Seamless Sailing apply to the selected profile. **Simulator Configuration** and **Seaview R7** change files in the Spirit installation, so they affect every profile that uses it.
 
 ### Objects tab
 
@@ -162,7 +186,7 @@ The installer dialog is pre-filled from Spirit Launcher settings, so the default
 
 ## Download Content
 
-Use the **Content** button on the main window to open the content download dialog.
+Use the **Download content** button on the main window to open the content download dialog.
 
 ### Basic workflow
 
