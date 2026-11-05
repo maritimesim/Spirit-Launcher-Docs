@@ -1,5 +1,13 @@
 # Release Notes
 
+## 2.15.1
+
+### Fix
+
+- **Clearer queue summary.** The banner after a queue finishes now names the operation and result, for example "Object download finished with warnings" with the number of deployments that succeeded or failed. With several operations it counts operations separately, and a View queue button opens the queue for details.
+- **Clearer Seamless Sailing folder guidance.** The Seamless Sailing tab shows the expected tilesets, models, and atons folder layout. If a selected model or AtoN folder contains the tileset, the launcher now warns about the loop and lets you start anyway instead of refusing to launch.
+- **Resource Manager can start during an R7 download.** Launching Resource Manager is no longer blocked while R7 models are downloading. A notice explains that some models may be unavailable until the download finishes.
+
 ## 2.15.0
 
 ### Added
