@@ -64,7 +64,7 @@ The main window is where you manage installed versions and monitor ongoing work.
 
 - **RabbitMQ** starts or stops the local RabbitMQ runtime.
 - **Install** opens the Spirit installation dialog.
-- **Content** opens the content download dialog.
+- **Download content** opens the content download dialog.
 - The queue button in the toolbar opens the operation queue.
 - **Refresh** reloads the installed version list.
 - **Settings** opens Spirit Launcher settings.
@@ -87,6 +87,8 @@ Each installed Spirit version is shown as a card with actions on the right side.
 - **Uninstall** removes the version. This action is disabled while the version is running.
 
 The lower queue panel shows the current operation, queue counts, completion counts, warnings, and failures. The log strip at the bottom shows the latest log message and provides an **Open Logs** button.
+
+For launcher or setup problems, use **Open Logs** in that strip and then **Open Logs Folder** to find `launcher.log`. Copy it before restarting Spirit Launcher if you need to share it. This is separate from a profile's simulator logs.
 
 ### Profile logs
 
@@ -111,6 +113,7 @@ To add your own log files, add entries to `AdditionalLogSources` in `settings.js
   { "Name": "My Tool", "Path": "%LOCALAPPDATA%\\MyTool\\logs\\tool.log" }
 ]
 ```
+
 ## Profile Settings
 
 Open profile settings by clicking the gear button on a profile's card. The window title shows the profile name and Spirit version. Objects, Extensions, Areas, Persistent Configuration, and Seamless Sailing apply to the selected profile. **Simulator Configuration** and **Seaview R7** change files in the Spirit installation, so they affect every profile that uses it.
@@ -155,17 +158,31 @@ Use the Areas tab to choose the active area folder.
 
 This tab exposes the simulator configuration editor for the selected version.
 
+- Settings are listed A–Z by display name. Use **Search settings** to find a setting by name, XML key, or description. Use the **ⓘ** button on a row to read its description and exact XML key.
+- **Use setting** includes that entry in the file. For a boolean, selecting **False** is different from leaving **Use setting** unchecked.
+- **Open XML** uses your **Text Editor** preference in Settings. On older installations with x86 support, choose **Open x64 XML** or **Open x86 XML** from its menu. After editing externally, use **Reload** before saving from the launcher editor.
+- **Split x64 / x86** is available for other settings on older installations that have both architectures. Spirit 4 and later edit only x64.
+- **Copy from another installation** previews x64 settings from a source installation. Select the changes you want and stage them, then use **Save** or **Discard**. The source and destination-only settings are kept, executable overrides are unchecked by default, and copying alone does not write the x86 file. Saving still affects every profile that uses the destination installation.
 - Edit the available configuration entries directly in the editor.
 - Click **Save** to write changes.
 - Click **Discard** to abandon unsaved edits.
 - Click **Reload** to reload values from disk.
-- Click **Clear All** to remove all editable values from the current configuration state.
+- Click **Clear All** to stage disabling all settings in this list. Seaview R7 Additional Arguments is not affected.
 
 If you try to close the window with unsaved simulator configuration changes, Spirit Launcher asks you to confirm before closing.
 
-### Refresh all folders
+### Seaview R7 tab
 
-The **Refresh All** button in the top-right corner rebuilds the content view and runs validation again for the current version.
+- Choose the executable to use for this installation. Changing the selection applies immediately; save or discard any pending XML edits first.
+- Below the executable choices, use **Seaview R7 Additional Arguments** to edit the x64 command line. **Find in R7 arguments** locates existing text; use Enter or the arrow buttons to move between matches. **R7 examples** can add a documented argument to the draft or copy reference XML without applying it. Legacy x86 argument text is left unchanged.
+- **Save**, **Discard**, and **Reload** work on the shared XML draft, not just the current tab. **Reload** asks before replacing unsaved changes with what's on disk. Saving affects every profile using the Spirit installation.
+
+![Seaview R7 tab showing Additional Arguments, the Find and R7 examples controls, and the shared XML footer](images/seaview-r7-arguments.png)
+
+### Refresh and full rescan
+
+- **Refresh** follows the active tab. On **Objects**, **Extensions**, or **Areas**, it checks content and reuses information for unchanged files. On **Simulator Configuration** or **Seaview R7**, it reloads the shared XML and asks before discarding unsaved edits.
+- **Full rescan** is available from any tab and rereads Objects, Extensions, and Areas from disk. Use it when a normal refresh doesn't pick up content changes. It doesn't discard unsaved XML edits.
 
 ## Download Spirit
 
@@ -190,33 +207,36 @@ Use the **Download content** button on the main window to open the content downl
 
 ### Basic workflow
 
-1. Select one or more content types: **Objects**, **Areas**, or **Extensions**.
-2. Choose the target **Spirit Version**.
-3. Fill in the required input for each selected content type.
-4. Optionally change the destination folder name.
-5. Click **Download**.
-
-The **Download** button stays disabled until every selected content type has valid input. Its tooltip explains what is still missing.
+1. Select a content tab: **Objects**, **Areas**, or **Extensions**.
+2. Choose an **Installation Profile** if the selected download needs one.
+3. Choose the source and verify the destination.
+4. Click **Download** to queue the work, or **Download and Close** to queue it and close the window. The footer shows what's still needed or what was queued.
 
 ### Objects
 
-Objects support four input modes:
+Choose **Simulator objects** for content used by Spirit, **Seaview R7 models** for visual models used by Seaview R7, or **Both** to queue two downloads using the same product codes. Simulator objects use an installation profile and download to a **Simulator folder**. R7-only downloads do not use the installation profile, but **Release Channel** still applies. Select an existing **R7 collection folder** or choose a new one. In **Both**, the collection appears directly below the product-code source. Check both destination paths before queuing the downloads.
 
-- **From Existing File** to pick a known `.txt` file.
-- **Browse File** to choose a `.txt` file from disk.
-- **Manual Input** to enter space-separated product codes.
-- **From Exercise** to extract content from a `.kgexc.recovery` exercise file.
+Choose how to supply the product codes:
 
-Objects also expose extra options:
+- **Saved list** — select a known `.txt` file. Use **New list** or **Edit list** beside it. Built-in lists are read-only.
+- **Other text file** — browse to a `.txt` file with one product code per line.
+- **Enter codes** — type or paste space-separated product codes.
+- **From folder** — use immediate subfolder names as product codes. No files are copied.
+- **From exercise** — read product codes from a `.kgexc.recovery` exercise file.
 
-- **Include Web Instruments**.
-- **Recursive Download Mode** with `None`, `Required`, `Recommended`, or `Optional`.
-- **Use custom branch (non-master)** with a branch name field.
-- Extra content checkboxes for **Docs**, **DocData**, and **Seaview R7 visual model**.
+The **Simulator folder** card shows the destination and download options together. Choose a custom branch, a model dependency level (**None**, **Required**, **Recommended**, or **Optional**), or extra content such as web instruments, Docs and DocData. You can also match by Spirit version instead of the profile's Model Interface Version (MIV). These options do not affect R7 downloads.
+
+### Update existing objects
+
+1. In **Download Content → Objects**, choose **Update existing objects**. Switching tasks keeps your download choices.
+2. Choose a **Release Channel** and select the simulator objects folder or Seaview R7 collection you want to check. Click **Check for updates** on its card. Checking does not download or change files.
+3. If newer models are found, review **Details**, then select **Update N models** and confirm. This queues updates for all the newer models found by that check. An update replaces the affected model files, so keep a copy of any local changes you want to preserve.
+
+![Update existing objects task showing separate check buttons for the simulator folder and the Seaview R7 collection](images/update-existing-objects.png)
 
 ### Areas
 
-Areas support the same four source modes as Objects:
+Areas support four source modes:
 
 - **From Existing File**.
 - **Browse File**.

@@ -17,25 +17,26 @@ Click Install Spirit (4) to download and install that version of spirit. All dow
 
 ## 2. Download Content
 
-Open Download Content and choose the installation profile (1) you want to prepare.
-Download the Objects, Extensions, or Areas you need from the relevant tab, then click Download and Close (2).
-The queue shows progress, and downloaded content is placed under your configured content root.
-R7 models are downloaded into a collection folder, for example `ContentServer\models\all`.
+Click **Download content** to open the download window, then select **Objects**, **Extensions**, or **Areas**. On **Objects**, choose **Simulator objects** for Spirit content, **Seaview R7 models** for visual models, or **Both** if you need both.
+Choose the **Installation Profile (1)** for simulator content. If you're downloading only Seaview R7 models, skip the profile and choose a collection folder, for example `ContentServer\models\all`.
+Choose a source, check the destination, and click **Download and Close (2)**. Follow progress in the queue.
 
-![Download content](images/download-content.png)
+![Download Content: (1) Installation Profile and (2) Download and Close](images/download-content.png)
+
+If the models are already on disk, see [Update existing objects](../user_manual/user-manual.md#update-existing-objects) instead.
 
 ## 3. Manage Content For a Version
 
-Click the gear button on a profile to open its profile settings.
-Select the object, extension, and area folders you want that version to use.
+Click the **Profile settings** gear **(1)** on the profile's card in the main window.
+On **Objects**, select the folder you want the profile to use **(2)**. Use the **Extensions** and **Areas** tabs to select their folders the same way.
 Re-validate or fix incompatible folders when needed.
 
-![Managing content](images/managing-content.png)
+![Managing content: (1) the Profile settings gear on the main-window card and (2) the selected Objects folder](images/managing-content.png)
 
-For R7, open the Seamless Sailing tab (1) and choose a tileset (2), AtoNs, and a model collection. Select the folder itself, such as `ContentServer\tilesets\<tileset>`, not `ContentServer`. They are linked into the tileset when Resource Manager starts.
+For R7, open **Seamless Sailing (1)** and choose a **Tileset (2)**, an AtoN source, and a model collection. Select the tileset folder itself, such as `ContentServer\tilesets\<tileset>`, not `ContentServer`. The selected AtoN and model folders are linked into the tileset when Resource Manager starts. For the executable and command-line arguments, use the separate [Seaview R7 tab](../user_manual/user-manual.md#seaview-r7-tab).
 Close the window to keep working with that version.
 
-![Seamless Sailing](images/seamless-sailing.png)
+![Seamless Sailing: (1) the tab and (2) the Tileset picker, with AtoNs and Models alongside](images/seamless-sailing.png)
 
 ## 4. Start Spirit
 

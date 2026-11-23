@@ -1,5 +1,34 @@
 # Release Notes
 
+## 2.16.0
+
+### Added
+
+- **Find the latest launcher log even if setup gets stuck.** Use Open Logs Folder in setup or in the log viewer. Starting the launcher again replaces the previous log, so copy it first if you need to share it.
+- **Info button on profile cards.** See the Seaview R7 version and configuration file a profile uses.
+- **Delete folders from Seamless Sailing.** Tilesets, AtoNs and models have a Delete button that shows what will happen first. Linked folders are only unlinked, never deleted.
+- **Find Seaview R7 arguments on the Seaview R7 tab.** Edit the arguments next to the executable choice. Other Simulator Configuration settings are now listed A–Z. Saving XML still applies to both tabs.
+- **Update R7 models in a collection.** Under **Download Content → Objects → Update existing objects**, pick an R7 collection and use **Check for updates** to see which models have a newer R7 version. Updates run in the queue, check free disk space first, and can be cancelled. Each model is checked before replacement. Downloads into the same collection are unavailable while it updates.
+- **Update simulator objects.** Under **Download Content → Objects → Update existing objects**, pick a simulator objects folder to check for newer builds. Like R7 updates, this runs in the queue and checks each model before replacing it. Simulator model folders are replaced as a whole, so updates overwrite local changes.
+- **Copy Simulator Configuration settings from another installation.** Preview the x64 differences, choose what to copy, and save when ready. The source installation stays untouched.
+- **Easier Simulator Configuration editing.** A compact toolbar keeps search and **Open XML** visible, and the info buttons explain individual settings. Seaview R7 arguments have a full-width editor with **Find** and **R7 examples**, and you can view and edit the gRPC recording folder. Spirit 4 and later show only x64 configuration. Older installations keep their split editor for other settings, and existing x86 R7 arguments are left untouched.
+- **Clearer object downloads.** See the difference between simulator objects and Seaview R7 models, check both destinations before downloading, and get help with the simulator options.
+
+### Fixed
+
+- **Clearer K-Sim Connect setup.** See the installed version and sign-in status together. Setup only offers an update when a newer version is confirmed and checks again after the installer finishes.
+- **Safer folder migration during setup.** The wizard catches unsafe destinations before moving anything, explains what went wrong, and keeps the navigation and retry buttons visible while you scroll through the results.
+- **One Refresh for every settings tab.** Refresh follows the active tab. **Full rescan** rereads Objects, Extensions, and Areas without discarding pending XML edits.
+- **Seamless Sailing problems no longer stop you from launching.** You get a small warning on the profile and Resource Manager still starts.
+- **Failed downloads are easier to spot.** They show in red and say "Completed with failures".
+- **Installations update right away** when each install or uninstall finishes, not at the end of the queue.
+- **Seamless Sailing settings no longer freezes** while it checks your folders.
+- **More reliable content checks.** Missing folders stay listed as unavailable, "None" is remembered, one bad folder no longer breaks the whole check, and the check no longer gets stuck.
+- **Clearer message for broken folder links.** It tells you where the link points.
+- **Safer content folder changes.** Settings checks folders you choose with Browse and shows any warning next to the folder field. Save checks again before applying the change. Your existing content isn’t moved.
+- **R7 model collections list is tidier.** Download Content only offers real collections from your models folder.
+- General fixes and improvements.
+
 ## 2.15.1
 
 ### Fix
